@@ -1,5 +1,5 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import RounterMain from "./RounterMain";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<RounterMain />, document.getElementById("root"));

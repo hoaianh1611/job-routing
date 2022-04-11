@@ -90,8 +90,10 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <LoginIcon size="medium" color="inherit" />
-      <MenuItem onClick={handleMenuClose}>Sign in</MenuItem>
+      <MenuItem>
+        <LoginIcon size="medium" color="inherit" />
+        <Button color="inherit">Sign in</Button>
+      </MenuItem>
     </Menu>
   );
 
