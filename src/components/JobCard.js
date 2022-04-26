@@ -5,15 +5,15 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Chip, Stack, Divider } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 export default function JobCard({ job }) {
+  let location = useLocation();
   return (
     <Card
       variant="contained"
       style={{ backgroundColor: "#212121" }}
       sx={{
-        // height: "100%",
-        // maxWidth: "340px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
@@ -38,7 +38,7 @@ export default function JobCard({ job }) {
           spacing={0.5}
           marginTop={1}
           marginBottom={1}
-          sx={{ maxHeight: 30, width: "100%" }}
+          sx={{ maxHeight: 25, width: "100%" }}
           overflow="hidden"
         >
           {job.skills.map((i) => (
@@ -53,7 +53,7 @@ export default function JobCard({ job }) {
         <Typography
           // color="text.secondary"
           variant="body2"
-          height={90}
+          height={110}
           style={{ display: "inline-block" }}
           paddingTop={1}
         >
@@ -70,6 +70,9 @@ export default function JobCard({ job }) {
             textAlign: "center",
             justifyContent: "center",
           }}
+          component={Link}
+          to={`/jobs/${job.id}`}
+          state={{ backgroundLocation: location }}
         >
           Learn More
         </Button>

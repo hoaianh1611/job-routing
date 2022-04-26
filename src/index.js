@@ -1,5 +1,16 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
-import RounterMain from "./RounterMain";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { AuthProvider } from "./contexts/AuthContext";
 
-ReactDOM.render(<RounterMain />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <AuthProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
